@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+
+:root {
+    --color-background: 68, 179, 210;
+    --color-map-fill: 178, 178, 178;
+    --color-map-hover: 83, 255, 149;
+}
+
+body {
+    background-color: rgb(var(--color-background));
+}
+
+a {
+    cursor: pointer;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .container {
+        transform: rotate(90deg);
+    }
+}
+
+.map {
+    width: 90%;
+    height: auto;
+}
+
+h1.title {
+    font-family: Protest Strike;
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+    text-shadow:
+   -2px -2px 0 black,  
+    2px -2px 0 black,
+    -2px 2px 0 black,
+     2px 2px 0 black;
+}
+
+.map .province {
+    fill: rgb(178, 178, 178);
+    stroke: black;
+    stroke-width: 0.2px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 200ms ease-in-out;
+}
+
+.map .province:hover {
+    fill: rgba(var(--color-map-hover), 0.8) !important;
+    cursor: pointer;
+}
+
+.map .province.selected {
+    fill: rgba(var(--color-map-hover), 0.8) !important;
+}
+
+.custom-tooltip {
+    --bs-tooltip-bg: rgb(var(--color-map-hover));
+    --bs-tooltip-color: black;
+    --bs-tooltip-opacity: 1;
+    --bs-tooltip-font-size: 1.1em;
+    --bs-tooltip-arrow-height: .6rem;
+}
+
+.modal-body .img-box {
+    object-fit: none;
+    object-position: center;
+    width: 100%;
+    max-height: 250px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.modal-body img {
+    width: 100%;
+}
+
+.modal-body .yt-player {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+a.tts {
+    font-size: 2em;
+}
